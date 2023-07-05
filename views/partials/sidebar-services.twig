@@ -1,0 +1,14 @@
+<div class="sidebar-title">
+	Наши услуги:
+</div>
+<nav class="sidebar-menu">
+	<ul class="sidebar-menu__items">
+		{% for service in services %}
+			<a href="{{ service.get_path }}"
+			   class="sidebar-menu__link {{ post.slug == service.slug ? 'active' }}"
+			>
+				{{ service.post_title }}
+			</a>
+		{% endfor %}
+	</ul>
+</nav>

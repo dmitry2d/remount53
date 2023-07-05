@@ -1,0 +1,24 @@
+<div class="work-flex">
+	{% for nested_block in block.service_nested_blocks %}
+		<div class="work-item">
+			<img src="{{ Image(nested_block.nested_service_block_image).src }}" alt="{{ Image(nested_block.nested_service_block_image).alt }}">
+			<div class="work-item__title">
+				<span>{{ nested_block.nested_service_block_title }}</span>
+				{{ nested_block.nested_service_block_subtitle }}
+			</div>
+			<p>
+				{{ nested_block.nested_service_block_description }}
+			</p>
+
+			{# Преимущества	#}
+			{% if nested_block.nested_service_block_advantages %}
+			<div class="work-item__list-title">Преимущества</div>
+				<ul class="work-item__list">
+				{% for advantage in nested_block.nested_service_block_advantages %}
+					<li>{{ advantage.advantage_text }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>

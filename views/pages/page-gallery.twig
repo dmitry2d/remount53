@@ -1,0 +1,105 @@
+{% extends "layouts/base-with-sidebar.twig" %}
+
+{% block content %}
+	{{ post.content }}
+
+	{# Галереи #}
+	{% for category in gallery_categories %}
+		<h3 class="text-red">{{ category.name }}</h3>
+
+		<div class="gallery-item" data-category="{{ category.slug }}">
+			{# Фильтр по году #}
+			<div class="gallery-tags">
+				{% if years[category.slug]|length > 1 %}
+					{# <a href="#" class="gallery-tag" data-year="all">
+						Все
+					</a> #}
+				{% endif %}
+
+				{% for year in years[category.slug] %}
+					<a href="#" class="gallery-tag" data-year="{{ year }}">
+						{{ year }}
+					</a>
+				{% endfor %}
+			</div>
+			<div class="gallery-links">
+				{# Галереи одной категории #}
+				{% for gallery in galleries[category.slug] %}
+
+
+
+						{% autoescape false %}
+						{# {{ gallery|join(', ') }} #}
+						{% endautoescape %}
+
+					<div
+						class="gallery-link"
+						data-year="{{ gallery.custom.date | date('Y') }}"
+						data-category="{{ category.slug }}"
+					>
+
+						{# Фотографии галереи в обратном порядке #}
+
+						{# Закомментировал volcharo@gmail.com #}
+						{# {% for photo in gallery.meta('photos') %} #}
+						
+						{% for photo in gallery.get_field('photos') %}
+						
+						<div
+
+							{# Закомментировал volcharo@gmail.com #}
+							{# {% if loop.first %}
+								data-src="{{ photo.url | towebp }}"
+							{% else %}
+								data-src="{{ Image(photo) | towebp }}"
+							{% endif %} #}
+
+							data-src="{{ photo.url }}"
+							data-sub-html=".caption"
+							class="gallery-link__item"
+							{# Скрываем фотографии кроме первой #}
+							{% if not loop.first %} style="display: none" {% endif %}
+							
+						>
+
+							<img
+								class="gallery-image"
+
+								{# Закомментировал volcharo@gmail.com #}
+								{# {% if loop.first %} #}
+									{# src="{{ gallery.meta('photos')|last.sizes.large |resize(300,300) | towebp }}" #}
+								{# {% else %} #}
+									{# src="{{ photo.sizes.large |resize(300,300) | towebp }}" #}
+								{# {% endif %} #}
+
+								src="{{ photo.sizes.thumbnail |resize(300,300) | towebp }}"
+								alt="{{ photo.alt }}"
+							>
+							<div class="caption" style="display:none">
+								<h4>{{ gallery.title }}</h4>
+								<p>{{ gallery.description }}</p>
+							</div>
+						</div>
+						{% endfor %}
+
+						<span class="gallery-link__item-text date" style="border-radius: 5px; z-index: 2;">
+							{{ gallery.custom.date |date('F') }}
+						</span>
+						<span class="gallery-link__item-text title" style="z-index: 2; top: 10px; right: 10px; border-radius: 5px; bottom: unset;">
+							{{ gallery.title }}
+						</span>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block footer_scripts %}
+	{# Light Gallery scripts #}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-relative-caption.min.css" integrity="sha512-Tmsr0HjMvS/ReZR65bmX26m60EJjZw5AAKpnkPouiNfRqwIficKDk6x6/B3I8XdPfhTAVhGX7MkLrqZTGUn4og==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	{# Скрипт для галереи #}
+	<script src="{{ theme.link }}/assets/js/galleries_filters.js" defer></script>
+{% endblock %}

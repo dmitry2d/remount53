@@ -1,0 +1,193 @@
+{% extends "layouts/base-index.twig" %}
+
+{% block content %}
+	{# Баннер после шапки #}
+	<div class="index-head">
+		<div class="container">
+			<div class="index-head__flex">
+				<div class="index-head__left">
+					<div class="index-head__logo">
+						<img src="{{ site.theme.link }}/assets/img/index-logo.svg" alt="">
+					</div>
+					<div class="index-head__slogan">
+						{{ options.header_company_description }}
+					</div>
+					<div class="index-head__year">
+{#						{{ options.header_info }}#}
+						Работаем с <span>2009</span> года!
+					</div>
+					<div class="index-head__soc">
+						<a href="{{ options.vk }}" class="index-soc__item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M20.1494 0C9.0212 0 0 9.0212 0 20.1494C0 31.2776 9.0212 40.2988 20.1494 40.2988C31.2776 40.2988 40.2988 31.2776 40.2988 20.1494C40.2988 9.0212 31.2776 0 20.1494 0ZM21.7891 26.5096C21.5905 26.7191 21.2026 26.7614 21.2026 26.7614H19.918C19.918 26.7614 17.0839 26.9285 14.5873 24.3778C11.8647 21.5948 9.46057 16.0733 9.46057 16.0733C9.46057 16.0733 9.32181 15.7112 9.47213 15.5368C9.64138 15.3397 10.1029 15.3273 10.1029 15.3273L13.1734 15.3077C13.1734 15.3077 13.4625 15.3541 13.6696 15.5038C13.841 15.6276 13.9366 15.8577 13.9366 15.8577C13.9366 15.8577 14.4328 17.0897 15.0898 18.2041C16.3733 20.3803 16.9704 20.856 17.4056 20.6228C18.0405 20.2833 17.8503 17.5468 17.8503 17.5468C17.8503 17.5468 17.8618 16.5542 17.5307 16.1115C17.2742 15.7689 16.7906 15.6689 16.5773 15.641C16.4038 15.6183 16.6876 15.2241 17.0556 15.0477C17.6085 14.7825 18.584 14.767 19.7372 14.7784C20.636 14.7876 20.8946 14.8423 21.2457 14.9259C22.0605 15.1189 22.0351 15.7375 21.9802 17.0725C21.9638 17.4718 21.9447 17.9352 21.9447 18.4704C21.9447 18.5906 21.9412 18.7188 21.9375 18.8507C21.9184 19.5347 21.8966 20.3179 22.3557 20.6094C22.5912 20.758 23.1662 20.6311 24.6053 18.233C25.2876 17.0959 25.7985 15.7597 25.7985 15.7597C25.7985 15.7597 25.9109 15.5213 26.0844 15.4191C26.262 15.3149 26.5017 15.3469 26.5017 15.3469L29.7331 15.3273C29.7331 15.3273 30.7044 15.2128 30.8611 15.6441C31.0261 16.095 30.4984 17.1496 29.1781 18.8769C27.9257 20.5159 27.3162 21.1193 27.3721 21.653C27.413 22.043 27.8092 22.3957 28.5694 23.0879C30.1565 24.5344 30.582 25.2953 30.6842 25.4782C30.6926 25.4933 30.6989 25.5045 30.7034 25.5118C31.4151 26.6706 29.9139 26.7614 29.9139 26.7614L27.0431 26.8006C27.0431 26.8006 26.4271 26.9203 25.6155 26.3734C25.1904 26.0872 24.775 25.6197 24.3794 25.1744C23.7751 24.4944 23.2169 23.8662 22.7405 24.0146C21.9405 24.2643 21.9647 25.9555 21.9647 25.9555C21.9647 25.9555 21.971 26.3177 21.7891 26.5096Z" fill="white"/>
+							</svg>
+						</a>
+						<a href="{{ options.youtube }}" class="index-soc__item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="42" height="41" viewBox="0 0 42 41" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M20.9307 0C9.80245 0 0.78125 9.0212 0.78125 20.1494C0.78125 31.2776 9.80245 40.2988 20.9307 40.2988C32.0589 40.2988 41.0801 31.2776 41.0801 20.1494C41.0801 9.0212 32.0589 0 20.9307 0ZM29.3268 13.2232C30.2516 13.477 30.9799 14.2247 31.2271 15.1743C31.6762 16.8952 31.6762 20.486 31.6762 20.486C31.6762 20.486 31.6762 24.0766 31.2271 25.7977C30.9799 26.7472 30.2516 27.495 29.3268 27.7488C27.6509 28.2099 20.9299 28.2099 20.9299 28.2099C20.9299 28.2099 14.2089 28.2099 12.5329 27.7488C11.6081 27.495 10.8797 26.7472 10.6326 25.7977C10.1836 24.0766 10.1836 20.486 10.1836 20.486C10.1836 20.486 10.1836 16.8952 10.6326 15.1743C10.8797 14.2247 11.6081 13.477 12.5329 13.2232C14.2089 12.762 20.9299 12.762 20.9299 12.762C20.9299 12.762 27.6509 12.762 29.3268 13.2232Z" fill="white"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M18.916 24.1786V17.4622L24.2892 20.8205L18.916 24.1786Z" fill="white"/>
+							</svg>
+						</a>
+						<a href="{{ options.instagram }}" class="index-soc__item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+								<path d="M24.5689 20.1494C24.5689 22.2795 22.8422 24.0061 20.7122 24.0061C18.5822 24.0061 16.8555 22.2794 16.8555 20.1494C16.8555 18.0194 18.5822 16.2927 20.7122 16.2927C22.8422 16.2927 24.5689 18.0194 24.5689 20.1494Z" fill="white"/>
+								<path d="M29.7317 13.3259C29.5463 12.8233 29.2505 12.3687 28.8663 11.9955C28.4931 11.6111 28.0385 11.3154 27.5359 11.13C27.1281 10.9717 26.5158 10.7832 25.3877 10.7319C24.1674 10.6762 23.8015 10.6642 20.7122 10.6642C17.6226 10.6642 17.2567 10.6759 16.0368 10.7316C14.9087 10.7832 14.2959 10.9716 13.8886 11.13C13.3859 11.3153 12.9313 11.6111 12.5582 11.9955C12.1738 12.3687 11.878 12.8233 11.6924 13.3259C11.5341 13.7336 11.3456 14.3463 11.2943 15.4744C11.2386 16.6944 11.2266 17.0602 11.2266 20.1498C11.2266 23.2391 11.2386 23.605 11.2943 24.8253C11.3456 25.9533 11.5341 26.5658 11.6924 26.9735C11.8779 27.476 12.1736 27.9306 12.5578 28.3039C12.931 28.6882 13.3856 28.984 13.8883 29.1694C14.296 29.328 14.9087 29.5165 16.0368 29.5678C17.2567 29.6234 17.6223 29.6352 20.7119 29.6352C23.8018 29.6352 24.1677 29.6234 25.3873 29.5678C26.5154 29.5165 27.1282 29.328 27.5359 29.1694C28.0349 28.9769 28.488 28.6821 28.8662 28.3039C29.2444 27.9257 29.5393 27.4725 29.7317 26.9735C29.89 26.5658 30.0785 25.9534 30.1302 24.8253C30.1858 23.605 30.1975 23.2391 30.1975 20.1498C30.1975 17.0602 30.1858 16.6944 30.1302 15.4744C30.0788 14.3463 29.8903 13.7335 29.7317 13.3259ZM20.7122 26.0908C17.4308 26.0908 14.7707 23.431 14.7707 20.1495C14.7707 16.8681 17.4308 14.2083 20.7122 14.2083C23.9934 14.2083 26.6535 16.8681 26.6535 20.1495C26.6535 23.431 23.9934 26.0908 20.7122 26.0908ZM26.8884 15.3618C26.1216 15.3618 25.5 14.7401 25.5 13.9734C25.5 13.2067 26.1216 12.5849 26.8884 12.5849C27.6552 12.5849 28.2768 13.2066 28.2768 13.9733C28.2765 14.7401 27.6552 15.3618 26.8884 15.3618Z" fill="white"/>
+								<path d="M20.7119 0C9.58542 0 0.5625 9.02292 0.5625 20.1494C0.5625 31.2759 9.58542 40.2988 20.7119 40.2988C31.8384 40.2988 40.8613 31.2759 40.8613 20.1494C40.8613 9.02292 31.8384 0 20.7119 0ZM32.2123 24.9195C32.1564 26.1512 31.9605 26.9922 31.6745 27.7282C31.3773 28.4968 30.9227 29.1948 30.34 29.7775C29.7573 30.3602 29.0593 30.8148 28.2907 31.112C27.5549 31.398 26.7137 31.5935 25.4824 31.6498C24.2486 31.706 23.8544 31.7196 20.7122 31.7196C17.5697 31.7196 17.1758 31.706 15.9417 31.6498C14.7104 31.5935 13.8692 31.398 13.1334 31.112C12.3612 30.8216 11.6618 30.3661 11.084 29.7774C10.4954 29.1995 10.0401 28.5002 9.7496 27.7282C9.46366 26.9924 9.26783 26.1512 9.21187 24.9199C9.15496 23.6857 9.14174 23.2916 9.14174 20.1494C9.14174 17.0072 9.15496 16.613 9.21155 15.3793C9.26744 14.1476 9.46303 13.3067 9.74897 12.5706C10.0395 11.7986 10.4951 11.0992 11.0839 10.5215C11.6617 9.93272 12.3611 9.47723 13.1331 9.18679C13.8692 8.90084 14.7101 8.70533 15.9418 8.64905C17.1755 8.59278 17.5697 8.57924 20.7119 8.57924C23.8541 8.57924 24.2483 8.59278 25.482 8.64929C26.7137 8.70533 27.5546 8.90084 28.2907 9.18647C29.0628 9.47708 29.7623 9.93264 30.3402 10.5214C30.9288 11.0993 31.3841 11.7986 31.6745 12.5706C31.9608 13.3067 32.1563 14.1476 32.2126 15.3793C32.2688 16.613 32.2821 17.0072 32.2821 20.1494C32.2821 23.2916 32.2688 23.6858 32.2123 24.9195Z" fill="white"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="index-head__right">
+					<div class="index-head__right__content">
+						Звоните сейчас:
+						<a href="tel:{{ options.header_phone }}" class="index-head__tel">{{ options.header_phone }}</a>
+						<div class="index-head__callback">
+							<div class="index-head__callback-text">или закажите</div>
+							<a href="#" class="btn btn_callback">Обратный звонок</a>
+						</div>
+					</div>
+				</div>
+				<div class="index-mobile__burger">
+					<img src="{{ site.theme.link }}/assets/img/mobile-burger.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# Услуги #}
+	<div class="index-gallery">
+		<div class="container">
+			<div class="gallery-links">
+				{% for service in services %}
+					<a href="{{ service.link }}" class="gallery-link__index">
+						<span class="gallery-link">
+						 	<span class="gallery-link__item">
+								<img src="{{ service.meta('service_mainpage_image') }}" alt="">
+							</span>
+						</span>
+						<span class="gallery-link__index-text">
+							{{ service.post_title }}
+						</span>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{# Сданные объекты	#}
+	<div class="object-done">
+		<div class="container">
+			<div class="object-done__title">
+				Сданные объекты
+			</div>
+
+			<div class="object-done__slider swiper">
+				<div class="swiper-wrapper">
+					{% for gallery in galleries %}
+						<div class="swiper-slide" >
+							<div class="object-done__slide">
+								<img src="{{ gallery.meta('photos')|last.sizes.large | resize(600, 600) }}" alt="">
+
+								<div class="object-done__slide__content">
+									<div class="object-done__slide-date">{{ gallery.custom.date | date('F Y') }}</div>
+									<div class="object-done__slide-title">{{ gallery.title }}</div>
+								</div>
+
+								{# Фотографии галереи #}
+								{% for photo in gallery.meta('photos') %}
+									<div
+										class="gallery__item"
+										data-src="{{ Image(photo) | towebp }}"
+										data-sub-html=".caption"
+										style="display:none;"
+									>
+										<img src="{{ Image(photo) | towebp }}" alt="{{ photo.alt }}">
+										<div class="caption" style="display:none">
+											<h4>{{ gallery.title }}</h4>
+											<p>{{ gallery.description }}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="container container-pagination">
+					<div class="swiper-arrow swiper-button-prev"></div>
+					<div class="swiper-arrow swiper-button-next"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
+
+	{# Нижний блок #}
+	<div class="index-bottom">
+		<div class="container">
+			{# Акции и реклама #}
+			{% include 'partials/banners-and-promo.twig' %}
+
+			{# Привлекающие информационные баннеры #}
+{#			{% for banner in post.meta('mainpage_banners') %}#}
+
+				{# Перед последним баннером показываем блок отзывов #}
+{#				{% if loop.last %}#}
+{#					#}{# Отзывы #}
+{#					<div class="slider-reviews__title">#}
+{#						Отзывы#}
+{#						<a href="#" class="slider-reviews__link">все отзывы</a>#}
+{#					</div>#}
+{#					<div class="slider-reviews__container">#}
+{#						<div class="swiper-arrow swiper-button-prev"></div>#}
+
+{#						<div class="slider-reviews swiper">#}
+{#							<div class="swiper-wrapper">#}
+
+{#								{% for review in post.meta('mainpage_reviews') %}#}
+{#									<div class="swiper-slide">#}
+{#										<div class="swiper-slide__item">#}
+{#											<div class="review-item__pic">#}
+{#												<img src="{{ Image(review.review_author_photo).src }}" alt="">#}
+{#											</div>#}
+{#											<div class="review-item__content">#}
+{#												<div class="review-item__name">{{ review.review_author }}</div>#}
+{#													<div class="review-item__text">#}
+{#														{{ review.review_text }}#}
+{#													</div>#}
+{#												<a href="/reviews" class="btn btn_review">Смотреть видео-отзывы</a>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#								{% endfor %}#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="swiper-arrow swiper-button-next"></div>#}
+{#					</div>#}
+{#				{% endif %}#}
+
+				{# Баннер #}
+{#				<div class="banner">#}
+{#					{% if banner.mainpage_banner_link %}#}
+{#						<a class="banner-full" href="{{ banner.mainpage_banner_url }}">#}
+{#					{% else %}#}
+{#						<div class="banner-full">#}
+{#					{% endif %}#}
+{#						<img src="{{ Image(banner.mainpage_banner_image).src }}" />#}
+{#					{% if banner.mainpage_banner_link %}#}
+{#						</a>#}
+{#					{% else %}#}
+{#						</div>#}
+{#					{% endif %}#}
+{#				</div>#}
+{#			{% endfor %}#}
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer_scripts %}
+	{# Light Gallery #}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-relative-caption.min.css" integrity="sha512-Tmsr0HjMvS/ReZR65bmX26m60EJjZw5AAKpnkPouiNfRqwIficKDk6x6/B3I8XdPfhTAVhGX7MkLrqZTGUn4og==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="{{ theme.link }}/assets/js/objects-gallery.js" defer></script>
+{% endblock %}

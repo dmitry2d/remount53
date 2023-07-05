@@ -1,0 +1,60 @@
+{# Шаблон страницы услуг #}
+{% extends "layouts/base-with-sidebar.twig" %}
+
+{% block content %}
+	{# Заголовок услуги #}
+	<h1>{{ post.title }}</h1>
+
+	{# Содержание услуги (описание) #}
+	<p>{{ post.service_description }}</p>
+
+	{# Промо текст #}
+	{% if (post.service_promo_info) %}
+	<h3 class="text-red">
+		{{ post.service_promo_info }}
+	</h3>
+	{% endif %}
+
+	{# Блоки #}
+	{% for block in post.meta('service_blocks') %}
+		{# Заголовок блока #}
+		<div class="work-head">
+			<div class="work-head__content">
+				<div class="work-head__number">
+					{{ loop.index }}
+				</div>
+				{{ block.service_block_title }}
+
+				{% if (block.service_block_subtitle) %}
+				<span style="color: #ff711f;">&nbsp;—&nbsp;{{ block.service_block_subtitle }}</span>
+				{% endif %}
+			</div>
+		</div>
+
+		{# Контент блока #}
+		{% if (block.service_block_type == 'default') %}
+			{% include '/partials/services/blocks/default-type.twig' %}
+
+		{% elseif (block.service_block_type == 'advantages') %}
+			{% include '/partials/services/blocks/advantages-type.twig' with block %}
+
+		{% elseif (block.service_block_type == 'galleries') %}
+			{% include '/partials/services/blocks/galleries-type.twig' %}
+
+		{% elseif (block.service_block_type == 'nested') %}
+			{% include '/partials/services/blocks/nested-type.twig' %}
+
+		{% elseif (block.service_block_type == 'goods') %}
+			{% include '/partials/services/blocks/goods-type.twig' %}
+		{% endif %}
+
+	{% endfor %}
+{% endblock %}
+
+{% block footer_scripts %}
+	{# Light Gallery #}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-relative-caption.min.css" integrity="sha512-Tmsr0HjMvS/ReZR65bmX26m60EJjZw5AAKpnkPouiNfRqwIficKDk6x6/B3I8XdPfhTAVhGX7MkLrqZTGUn4og==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="{{ theme.link }}/assets/js/galleries.js"></script>
+{% endblock %}

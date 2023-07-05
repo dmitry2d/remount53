@@ -1,0 +1,82 @@
+/* Modal backdrop */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* Enable scroll if needed */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	transition-duration: 0.5s;
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: transparent;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	width: 85%;
+}
+
+@media (width <= 600px) {
+	.modal-content {
+		margin: 25% auto;
+	}
+}
+
+/* Close Button */
+.closeModal {
+	position: absolute;
+	right: 1.5rem;
+	top: 3rem;
+	color: #fff;
+	float: right;
+	font-size: 45px;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+	color: lightcoral;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.fade-in {
+	animation: fadeIn 0.4s;
+}
+
+.fade-out {
+	animation: fadeOut 0.4s;
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+.error-message {
+	display: none;
+	font-size: 0.8rem;
+	color: red;
+	margin-top: 5px;
+}
+
+.has-error .form-control {
+	border-color: red;
+}
+
+.has-error .error-message {
+	display: block;
+}
+
+#form-message {
+	margin-top: 10px;
+	font-size: 0.9rem;
+}

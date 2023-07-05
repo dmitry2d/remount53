@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Golos-DemiBold';
+  src: url('Golos-DemiBold.eot');
+  src: url('Golos-DemiBold.eot?#iefix') format('embedded-opentype'),
+       url('Golos-DemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GolosText-DemiBold';
+  src: url('GolosText-DemiBold.svg#GolosText-DemiBold') format('svg'),
+       url('GolosText-DemiBold.ttf') format('truetype'),
+       url('GolosText-DemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+

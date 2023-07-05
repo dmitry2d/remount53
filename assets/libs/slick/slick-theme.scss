@@ -1,0 +1,134 @@
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    line-height: 0px;
+    cursor: pointer;
+    background: transparent;
+    top: 50%;
+    transform: translateY(-68px);
+    padding: 0;
+    outline: none;
+    transition: .25s;
+    border-radius: 5px;
+    border: 1px solid #29767E;
+    color: #29767E;
+    font-size: 25px;
+    &:hover{
+        background: $color;
+        border: 1px solid $color;
+        color: white;
+    }
+}
+
+.teraliv{
+    .slick-prev, .slick-next{
+        &:hover{
+            background: $color2;
+            border: 1px solid $color2;
+        }
+    }
+}
+
+.teraflux{
+    .slick-prev, .slick-next{
+        &:hover{
+            background: $color3;
+            border: 1px solid $color3;
+        }
+    }
+}
+
+.neodolpassse{
+    .slick-prev, .slick-next{
+        &:hover{
+            background: $color4;
+            border: 1px solid $color4;
+        }
+    }
+}
+
+.neuromidin{
+    .slick-prev, .slick-next{
+        &:hover{
+            background: $color5;
+            border: 1px solid $color5;
+        }
+    }
+}
+
+.nutridrink{
+    .slick-prev, .slick-next{
+        &:hover{
+            background: $color6;
+            border: 1px solid $color6;
+        }
+    }
+}
+
+.slick-prev {
+    left: 10px;
+    span{
+        transform: rotate(180deg);
+    }
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 48px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        width: 9px;
+        height: 17px;
+        margin: 0 4px;
+        background: #7A7A7A;
+        transform: skew(-30deg, 0deg);
+        button {
+           display: none;
+        }
+        &.slick-active{
+            background: $color;
+        }
+    }
+}
+
+.teraliv .slick-dots li.slick-active{
+    background: $color2;
+}
+
+.teraflux .slick-dots li.slick-active{
+    background: $color3;
+}
+
+.neodolpassse .slick-dots li.slick-active{
+    background: $color4;
+}
+
+
+.neuromidin .slick-dots li.slick-active{
+    background: $color5;
+}
+
+.nutridrink .slick-dots li.slick-active{
+    background: $color6;
+}

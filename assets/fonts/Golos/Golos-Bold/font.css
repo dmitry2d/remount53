@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Golos-Bold';
+  src: url('Golos-Bold.eot');
+  src: url('Golos-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Golos-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GolosText-Bold';
+  src: url('GolosText-Bold.svg#GolosText-Bold') format('svg'),
+       url('GolosText-Bold.ttf') format('truetype'),
+       url('GolosText-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div id="modalForm" class="modal">
+
+	<div class="modal-content">
+		<span class="closeModal">&times;</span>
+
+		<form id="modal-form" method="POST" autocomplete="off" class="footer-sale">
+			<div class="footer-sale__title">Заполните форму и мы свяжемся с вами</div>
+
+			<div class="footer-sale__flex">
+				{# CSRF token #}
+				{% do function('wp_nonce_field', 'modal_form_action', '_modal_form_nonce', false) %}
+
+				<div class="form-group">
+					<input type="text" name="name" id="name" placeholder="Ваше имя" class="input" autocomplete="off" required="">
+					<span class="error-message" id="name-error-message"></span>
+				</div>
+
+				<div class="form-group">
+					<input type="tel" name="phone" id="phone" placeholder="Телефон" class="input" autocomplete="off" required="">
+					<span class="error-message" id="phone-error-message"></span>
+				</div>
+
+				<div class="form-group" style="color: #fff; flex-grow: 1;">
+					<label for="agree">
+						Подтверждаю своё согласие на
+						<a href="/privacy-policy/" target="_blank" class="footer-column">
+							обработку персональных данных.
+						</a>
+					</label>
+					<input type="checkbox" name="agree" id="agree" class="" autocomplete="off" required>
+					<span class="error-message" id="agree-error-message"></span>
+				</div>
+
+				<button class="btn" type="submit">Отправить</button>
+			</div>
+		</form>
+
+		<div id="modal-form-message" style="padding: 1rem 1rem;"></div>
+	</div>
+</div>

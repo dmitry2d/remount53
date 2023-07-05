@@ -1,0 +1,55 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+	{{ post.content }}
+
+	<div class="contact-items">
+		<div class="contact-item">
+			<div class="contact-item__label">Телефон:</div>
+			<a href="tel:+7 (8162) 55-26-45" itemprop="telephone" class="contact-item__tel">
+				{{ post.meta('contacts_phone') }}
+			</a>
+			<div class="contact-item__text">{{ post.meta('contacts_phone_description') }}</div>
+		</div>
+		<div class="contact-item">
+			<div class="contact-item__label">E-mail:</div>
+			<a href="mailto:{{ post.meta('contacts_email') }}" itemprop="email" class="contact-item__mail">
+				{{ post.meta('contacts_email') }}
+			</a>
+			<div class="contact-item__text">ответим на любые <br> ваши вопросы</div>
+		</div>
+		<div class="contact-item">
+			<div class="contact-item__label">Адрес:</div>
+			<div class="contact-item__text">
+				{{ post.meta('contacts_address') }}
+			</div>
+		</div>
+		<div class="contact-item">
+			<div class="contact-item__label">
+				Режим работы:
+			</div>
+			<div class="contact-item__text">
+				{{ post.meta('contacts_working_hours') }}
+			</div>
+		</div>
+		<div class="contact-item">
+			<div class="contact-item__label">GPS-координаты:</div>
+			<div class="contact-item__coord">{{ post.meta('contacts_gps_coordinates') }}</div>
+		</div>
+	</div>
+
+	<div class="map-container">
+		<h3>
+			Карта проезда
+		</h3>
+
+		<div id="map">
+			<iframe
+				src="{{ post.meta('contacts_map_link') }}"
+				width="100%"
+				height="617"
+				frameborder="0">
+			</iframe>
+		</div>
+	</div>
+{% endblock %}

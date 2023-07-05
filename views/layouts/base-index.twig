@@ -1,0 +1,38 @@
+{% block html_head_container %}
+
+{% include 'partials/html-head.twig' %}
+
+{% block head %}
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block head_scripts %}
+{% endblock %}
+</head>
+{% endblock %}
+
+	<body>
+		{# Header #}
+		{% include 'partials/header.twig' %}
+
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+
+		{% block footer %}
+			{% include 'partials/footer.twig' %}
+			{{ function('wp_footer') }}
+		{% endblock %}
+
+		{# Модальное окно #}
+		{% include 'forms/modal.twig' %}
+
+		{# Footer scripts #}
+		<script src="{{ site.theme.link }}/assets/js/swiper-bundle.min.js"></script>
+		<script src="{{ site.theme.link }}/assets/js/common.js"></script>
+		{% block footer_scripts %}
+		{% endblock %}
+	</body>
+</html>

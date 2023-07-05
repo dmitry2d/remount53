@@ -1,0 +1,28 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+	{{ post.content }}
+
+	{# Видео-отзывы #}
+	<div class="review-items">
+		{% for review in post.meta('video_reviews') %}
+			<div class="review-item">
+				{{ review.video_review_link }}
+				{#				<iframe width="560" height="315" src="{{ review.video_link }}"#}
+				{#						title="YouTube video player" frameborder="0"#}
+				{#						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"#}
+				{#						allowfullscreen>#}
+				{#				</iframe>#}
+			</div>
+
+			{# После последнего видео добавляем инфо-блк #}
+			{% if (loop.last) %}
+				<div class="review-item review-item__bg">
+					<div class="reviews-bg">
+						<div class="btn-purple">Здесь может быть <br> ваш отзыв</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

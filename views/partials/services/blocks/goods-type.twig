@@ -1,0 +1,34 @@
+{% for nested_block in block.service_nested_blocks %}
+<div class="work-flex work-border">
+	<div class="work-item">
+		<img
+			src="{{ Image(nested_block.nested_service_block_image).src }}"
+			alt="{{ Image(nested_block.nested_service_block_image).alt }}"
+		>
+	</div>
+	<div class="work-item">
+		<div class="work-item__title mt-0">
+			<span>{{ nested_block.nested_service_block_title }}</span>
+		</div>
+		<p>
+			{{ nested_block.nested_service_block_description }}
+		</p>
+
+		{% if nested_block.nested_service_block_parameters %}
+			{% for parameter in nested_block.nested_service_block_parameters %}
+			<div class="work-size">
+				<span class="text-red"><b>{{ parameter.good_parameter }}:</b></span>
+				<span>{{ parameter.good_parameter_value }}</span>
+			</div>
+			{% endfor %}
+		{% endif %}
+
+		{% if nested_block.nested_service_block_price %}
+		<div class="work-price">
+			<span class="text-red"><b>Цена с установкой:</b></span>
+			<span class="text-orange"><b>{{ nested_block.nested_service_block_price }}</b></span>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endfor %}

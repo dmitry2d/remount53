@@ -1,0 +1,15 @@
+{% if menu %}
+	<ul>
+	{% for item in items %}
+		<li>
+			<a
+				href="{{ item.link }}"
+				target="{{ item.target }}"
+				class="{{ item.current ? 'active'}}"
+			>
+				{{ item.title }}
+			</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

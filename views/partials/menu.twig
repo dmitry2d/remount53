@@ -1,0 +1,16 @@
+{% if menu %}
+	<ul class="header-menu__items">
+	{% for item in items %}
+		<li class="header-menu__item {{ item.classes | join(' ') }}">
+			<a
+				class="header-menu__link {{ item.current ? 'active'}}"
+				target="{{ item.target }}"
+				href="{{ item.link }}"
+			>
+				{{ item.title }}
+			</a>
+			{% include "partials/menu.twig" with {'items': item.children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
