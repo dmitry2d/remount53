@@ -101,28 +101,28 @@ window.addEventListener("DOMContentLoaded", () => {
 		})
 	})
 
-	// Галереи на страницах услуг
-    document.querySelectorAll('.slider-items').forEach(item => {
-        let swiper = new Swiper(item, {
-            spaceBetween: 25,
-            currentClass: 'swiper-pagination-current',
-            navigation: {
-                nextEl: item.closest('.slider-items__block').querySelector('.swiper-button-next'),
-                prevEl: item.closest('.slider-items__block').querySelector('.swiper-button-prev'),
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        })
-    })
+	// // Галереи на страницах услуг
+    // document.querySelectorAll('.slider-items').forEach(item => {
+    //     let swiper = new Swiper(item, {
+    //         spaceBetween: 25,
+    //         currentClass: 'swiper-pagination-current',
+    //         navigation: {
+    //             nextEl: item.closest('.slider-items__block').querySelector('.swiper-button-next'),
+    //             prevEl: item.closest('.slider-items__block').querySelector('.swiper-button-prev'),
+    //         },
+    //         breakpoints: {
+    //             320: {
+    //                 slidesPerView: 1,
+    //             },
+    //             768: {
+    //                 slidesPerView: 2,
+    //             },
+    //             1024: {
+    //                 slidesPerView: 3,
+    //             },
+    //         },
+    //     })
+    // })
 
 	// Отзывы на главной
     document.querySelectorAll('.slider-reviews').forEach(item => {
