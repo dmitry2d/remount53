@@ -15,8 +15,12 @@
 	</h3>
 	{% endif %}
 
+	{# id для объединения соседних галлерей #}
+	{% set gallery_set_id = 0 %}
+
 	{# Блоки #}
 	{% for block in post.meta('service_blocks') %}
+
 		{# Заголовок блока #}
 		<div class="work-head">
 			<div class="work-head__content">
@@ -48,6 +52,11 @@
 			{% include '/partials/services/blocks/goods-type.twig' %}
 		{% endif %}
 
+		{# Следующий id для соседних галлерей #}
+		{% if (block.service_block_type != 'galleries') %}
+			{% set gallery_set_id = gallery_set_id + 1 %}
+		{% endif %}
+
 	{% endfor %}
 {% endblock %}
 
@@ -57,4 +66,5 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-relative-caption.min.css" integrity="sha512-Tmsr0HjMvS/ReZR65bmX26m60EJjZw5AAKpnkPouiNfRqwIficKDk6x6/B3I8XdPfhTAVhGX7MkLrqZTGUn4og==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js" integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="{{ theme.link }}/assets/js/galleries.js"></script>
+	<script src="{{ theme.link }}/assets/js/sliders.js"></script>
 {% endblock %}

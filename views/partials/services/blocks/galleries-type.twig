@@ -1,27 +1,28 @@
+
+{% set startGalleryCount = 2 %}
 {% for gallery in Post(block.service_block_galleries) %}
-	<div id="{{ gallery.id }}" style="margin-bottom: 1.5rem;" class="gallery">
+	<div id="{{ gallery.id }}" gallery-set-id="{{ gallery_set_id }}" style="margin-bottom: 1.5rem;" class="gallery{{ loop.index > startGalleryCount ? ' hidden' : '' }}">
 		<div class="title-time">
 			{{ gallery.title }}
 			<span>// {{ gallery.date | date('F Y') }}</span>
 		</div>
 
-		<div class="slider-items__block">
-			<div class="swiper-arrow swiper-button-prev"></div>
-			<div class="slider-items swiper">
-				<div class="swiper-wrapper">
-
+		<div class="gallery-slider">
+			<div class="gallery-slider__items">
 				{# Изображения галереи  #}
 				{% for photo in gallery.meta('photos') %}
-					<div class="swiper-slide">
+					<div class="gallery-slider__item">
 						<div
-							class="swiper-slide__pic"
+							class="gallery-slider__image"
 							data-src="{{ Image(photo) | towebp }}"
 							data-sub-html=".caption"
 						>
-							<img
-								src="{{ photo.sizes.large | resize(300, 200) | towebp }}"
-								alt="{{ photo.alt }}"
-							/>
+							<div class="gallery-slider__image__wrapper">
+								<img
+									src="{{ photo.sizes.large | towebp }}"
+									alt="{{ photo.alt }}"
+								/>
+							</div>
 							<div class="caption" style="display:none">
 								<h4>{{ gallery.title }}</h4>
 								<p>{{ gallery.description }}</p>
@@ -29,9 +30,7 @@
 						</div>
 					</div>
 				{% endfor %}
-				</div>
 			</div>
-			<div class="swiper-arrow swiper-button-next"></div>
 		</div>
 
 		{# Описание галереи #}
@@ -45,4 +44,8 @@
 	</div>
 {% endfor %}
 
-<button id="load-more" title="Показать ещё" class="btn btn_purple">Показать ещё</button>
+{% if block.service_block_galleries|length > startGalleryCount %}
+
+<button id="load-more" title="Показать ещё" class="btn btn_purple" gallery-set-id="{{ gallery_set_id }}">Показать ещё</button>
+
+{% endif %}

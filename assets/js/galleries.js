@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded",() => {
-	let galleries = document.querySelectorAll('.swiper')
+	let galleries = document.querySelectorAll('.gallery-slider')
 
 	galleries.forEach(gallery => {
 		lightGallery(gallery, {
-			selector: '.swiper-slide__pic',
+			selector: '.gallery-slider__image',
 			speed: 500,
 			subHtmlSelectorRelative: true,
 			download: false
