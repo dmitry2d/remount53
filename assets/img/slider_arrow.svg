@@ -11,13 +11,8 @@
 <feGaussianBlur stdDeviation="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0.941176 0 0 0 0 0.745098 0 0 0 0 0.823529 0 0 0 1 0"/>
-<<<<<<< HEAD
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_17_13"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_17_13" result="shape"/>
-=======
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_17_10"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_17_10" result="shape"/>
->>>>>>> c95f1e5224a133e4790d7c84632a6bac8a5ecdb9
 </filter>
 </defs>
 </svg>
