@@ -29,8 +29,48 @@
 							</div>
 						</div>
 					</div>
+				{% endfor %} #}
+				{# </div> #}
+			{# </div> #}
+			{# <div class="swiper-arrow swiper-button-next"></div> #}
+		{# </div> #}
+
+
+
+		<div class="gallery-slider">
+			{# <div class="swiper-arrow swiper-button-prev"></div> #}
+			{# <div class="gallery-slider__button gallery-slider__prev"></div> #}
+			<div class="gallery-slider__items">
+				{# <div class="swiper-wrapper"> #}
+				{# Изображения галереи  #}
+				{% for photo in gallery.meta('photos') %}
+					<div class="gallery-slider__item">
+						<div
+							class="gallery-slider__image"
+							data-src="{{ Image(photo) | towebp }}"
+							data-sub-html=".caption"
+						>
+							<div class="gallery-slider__image__wrapper">
+								<img
+									src="{{ photo.sizes.large | towebp }}"
+									alt="{{ photo.alt }}"
+								/>
+							</div>
+							<div class="caption" style="display:none">
+								<h4>{{ gallery.title }}</h4>
+								<p>{{ gallery.description }}</p>
+							</div>
+						</div>
+					</div>
 				{% endfor %}
+<<<<<<< HEAD
 			</div>
+=======
+				{# </div> #}
+			</div>
+			{# <div class="gallery-slider__button gallery-slider__next"></div> #}
+			{# <div class="swiper-arrow swiper-button-next"></div> #}
+>>>>>>> c95f1e5224a133e4790d7c84632a6bac8a5ecdb9
 		</div>
 
 		{# Описание галереи #}
