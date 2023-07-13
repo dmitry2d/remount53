@@ -97,11 +97,11 @@
 								{% for photo in gallery.meta('photos') %}
 									<div
 										class="gallery__item"
-										data-src="{{ Image(photo) | towebp }}"
+										data-src="{{ Image(photo) }}"
 										data-sub-html=".caption"
 										style="display:none;"
 									>
-										<img src="{{ Image(photo) | towebp }}" alt="{{ photo.alt }}">
+										<img src="{{ photo.sizes.medium_large }}" alt="{{ photo.alt }}">
 										<div class="caption" style="display:none">
 											<h4>{{ gallery.title }}</h4>
 											<p>{{ gallery.description }}</p>

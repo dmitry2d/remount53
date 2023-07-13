@@ -26,60 +26,53 @@
 				{# Галереи одной категории #}
 				{% for gallery in galleries[category.slug] %}
 
-
-
-						{% autoescape false %}
-						{# {{ gallery|join(', ') }} #}
-						{% endautoescape %}
-
-					<div
+					<div 
 						class="gallery-link"
 						data-year="{{ gallery.custom.date | date('Y') }}"
 						data-category="{{ category.slug }}"
 					>
 
-						{# Фотографии галереи в обратном порядке #}
+						{# Превью галереи #}
 
-						{# Закомментировал volcharo@gmail.com #}
-						{# {% for photo in gallery.meta('photos') %} #}
-						
+							{# <div		
+								class="gallery-link__item"
+							> #}
+								<img
+									class="gallery-image"
+									src="{{ gallery.get_field('photos')|last.sizes.medium_large | resize(300,300) }}"
+									alt="{{ gallery.get_field('photos')|last.alt }}"
+								>
+								{# <div class="caption" style="display:none">
+									<h4>{{ gallery.title }}</h4>
+									<p>{{ gallery.description }}</p>
+								</div> #}
+							{# </div> #}
+
+						{# Фотографии галереи #}
+
 						{% for photo in gallery.get_field('photos') %}
 						
-						<div
-
-							{# Закомментировал volcharo@gmail.com #}
-							{# {% if loop.first %}
-								data-src="{{ photo.url | towebp }}"
-							{% else %}
-								data-src="{{ Image(photo) | towebp }}"
-							{% endif %} #}
-
-							data-src="{{ photo.url }}"
-							data-sub-html=".caption"
-							class="gallery-link__item"
-							{# Скрываем фотографии кроме первой #}
-							{% if not loop.first %} style="display: none" {% endif %}
-							
-						>
-
-							<img
-								class="gallery-image"
-
-								{# Закомментировал volcharo@gmail.com #}
-								{# {% if loop.first %} #}
-									{# src="{{ gallery.meta('photos')|last.sizes.large |resize(300,300) | towebp }}" #}
-								{# {% else %} #}
-									{# src="{{ photo.sizes.large |resize(300,300) | towebp }}" #}
-								{# {% endif %} #}
-
-								src="{{ photo.sizes.thumbnail |resize(300,300) | towebp }}"
-								alt="{{ photo.alt }}"
+							<div
+								data-src="{{ photo.url }}"
+								data-sub-html=".caption"
+								class="gallery-link__item"
+								{# Скрываем фотографии кроме первой #}
+								{# {% if not loop.last %} style="display: none" {% endif %} #}
+								{# {% if not loop.last %} style="display: none" {% endif %} #}
+								style="display: none"
+								
 							>
-							<div class="caption" style="display:none">
-								<h4>{{ gallery.title }}</h4>
-								<p>{{ gallery.description }}</p>
+								<img
+									class="gallery-image"
+									src="{{ photo.sizes.medium_large | resize(300,300) }}"
+									alt="{{ photo.alt }}"
+								>
+								<div class="caption" style="display:none">
+									<h4>{{ gallery.title }}</h4>
+									<p>{{ gallery.description }}</p>
+								</div>
 							</div>
-						</div>
+
 						{% endfor %}
 
 						<span class="gallery-link__item-text date" style="border-radius: 5px; z-index: 2;">

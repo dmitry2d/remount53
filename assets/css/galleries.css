@@ -5,9 +5,15 @@
     overflow: unset;
     transition: max-height 0.3s, opacity 0.3s 0.3s;
 }
-
 .gallery.hidden {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+}
+.gallery-link > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
 }
