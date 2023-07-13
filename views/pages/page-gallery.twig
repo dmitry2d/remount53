@@ -31,22 +31,13 @@
 						data-year="{{ gallery.custom.date | date('Y') }}"
 						data-category="{{ category.slug }}"
 					>
-
 						{# Превью галереи #}
 
-							{# <div		
-								class="gallery-link__item"
-							> #}
-								<img
-									class="gallery-image"
-									src="{{ gallery.get_field('photos')|last.sizes.medium_large | resize(300,300) }}"
-									alt="{{ gallery.get_field('photos')|last.alt }}"
-								>
-								{# <div class="caption" style="display:none">
-									<h4>{{ gallery.title }}</h4>
-									<p>{{ gallery.description }}</p>
-								</div> #}
-							{# </div> #}
+						<img
+							class="gallery-image"
+							src="{{ gallery.get_field('photos')|last.sizes.medium_large | resize(300,300) }}"
+							alt="{{ gallery.get_field('photos')|last.alt }}"
+						>
 
 						{# Фотографии галереи #}
 
@@ -56,9 +47,6 @@
 								data-src="{{ photo.url }}"
 								data-sub-html=".caption"
 								class="gallery-link__item"
-								{# Скрываем фотографии кроме первой #}
-								{# {% if not loop.last %} style="display: none" {% endif %} #}
-								{# {% if not loop.last %} style="display: none" {% endif %} #}
 								style="display: none"
 								
 							>
