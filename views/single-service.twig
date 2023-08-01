@@ -35,6 +35,12 @@
 			</div>
 		</div>
 
+		{# Описание блока #}
+
+		<div class="work=-description">
+		{{ block.service_block_description }}
+		</div>
+
 		{# Контент блока #}
 		{% if (block.service_block_type == 'default') %}
 			{% include '/partials/services/blocks/default-type.twig' %}
