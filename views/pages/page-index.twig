@@ -86,7 +86,7 @@
 					{% for gallery in galleries %}
 						<div class="swiper-slide" >
 							<div class="object-done__slide">
-								<img src="{{ gallery.meta('photos')|last.sizes.large | resize(600, 600) }}" alt="">
+								<img src="{{ gallery.meta('photos')|last.sizes.medium_large | resize(600, 600) }}" alt="">
 
 								<div class="object-done__slide__content">
 									<div class="object-done__slide-date">{{ gallery.custom.date | date('F Y') }}</div>
@@ -97,16 +97,16 @@
 								{% for photo in gallery.meta('photos') %}
 									<div
 										class="gallery__item"
-										data-src="{{ Image(photo) | towebp }}"
+										data-src="{{ Image(photo) }}"
 										data-sub-html=".caption"
 										style="display:none;"
 									>
-										<img src="{{ Image(photo) | towebp }}" alt="{{ photo.alt }}">
+										<img src="{{ photo.sizes.medium_large }}" alt="{{ photo.alt }}">
 										<div class="caption" style="display:none">
 											<h4>{{ gallery.title }}</h4>
 											<p>{{ gallery.description }}</p>
 										</div>
-									</div>
+									</div> 
 								{% endfor %}
 							</div>
 						</div>

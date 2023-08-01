@@ -14,12 +14,12 @@
 					<div class="gallery-slider__item">
 						<div
 							class="gallery-slider__image"
-							data-src="{{ Image(photo) | towebp }}"
+							data-src="{{ Image(photo) }}"
 							data-sub-html=".caption"
 						>
 							<div class="gallery-slider__image__wrapper">
 								<img
-									src="{{ photo.sizes.large | towebp }}"
+									src="{{ photo.sizes.medium_large }}"
 									alt="{{ photo.alt }}"
 								/>
 							</div>

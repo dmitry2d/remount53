@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	let galleries = document.querySelectorAll('.gallery-link')
 
 	galleries.forEach(gallery => {
-		lightGallery(gallery, {
+		let myGallery = lightGallery(gallery, {
 			selector: '.gallery-link__item',
 			speed: 500,
 			subHtmlSelectorRelative: true,
 			download: false,
 		})
+
+		gallery.addEventListener('click', () => myGallery.openGallery(0))
+		
 	})
 
 	let years = document.querySelectorAll('a.gallery-tag')

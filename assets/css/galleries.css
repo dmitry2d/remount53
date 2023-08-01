@@ -5,7 +5,6 @@
     overflow: unset;
     transition: max-height 0.3s, opacity 0.3s 0.3s;
 }
-
 .gallery.hidden {
     max-height: 0;
     opacity: 0;
