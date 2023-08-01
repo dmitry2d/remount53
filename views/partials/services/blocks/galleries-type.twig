@@ -4,7 +4,7 @@
 	<div id="{{ gallery.id }}" gallery-set-id="{{ gallery_set_id }}" style="margin-bottom: 1.5rem;" class="gallery{{ loop.index > startGalleryCount ? ' hidden' : '' }}">
 		<div class="title-time">
 			{{ gallery.title }}
-			<span>// {{ gallery.date | date('F Y') }}</span>
+			<span>// {{ gallery.custom.date | date('F Y') }}</span>
 		</div>
 
 		<div class="gallery-slider">
