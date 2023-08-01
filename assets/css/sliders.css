@@ -6,9 +6,11 @@
 }
 .gallery-slider__items {
     max-height: 0;
+    overflow: hidden;
 }
 .gallery-slider__items.slick-initialized {
     max-height: unset;
+    overflow: unset;
 }
 .gallery-slider__items {
     margin: 0 60px;

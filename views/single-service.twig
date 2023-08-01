@@ -15,8 +15,12 @@
 	</h3>
 	{% endif %}
 
+	{# id для объединения соседних галлерей #}
+	{% set gallery_set_id = 0 %}
+
 	{# Блоки #}
 	{% for block in post.meta('service_blocks') %}
+
 		{# Заголовок блока #}
 		<div class="work-head">
 			<div class="work-head__content">
@@ -46,6 +50,11 @@
 
 		{% elseif (block.service_block_type == 'goods') %}
 			{% include '/partials/services/blocks/goods-type.twig' %}
+		{% endif %}
+
+		{# Следующий id для соседних галлерей #}
+		{% if (block.service_block_type != 'galleries') %}
+			{% set gallery_set_id = gallery_set_id + 1 %}
 		{% endif %}
 
 	{% endfor %}
