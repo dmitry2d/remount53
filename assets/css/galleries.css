@@ -6,6 +6,7 @@
     transition: max-height 0.3s, opacity 0.3s 0.3s;
 }
 .gallery.hidden {
+    margin: 0!important;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -16,4 +17,7 @@
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
+}
+.gallery + .btn_purple {
+    margin-top: 0;
 }

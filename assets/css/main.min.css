@@ -2095,6 +2095,9 @@ h4 {
 	background: url(../img/work-list.svg) no-repeat center;
 	background-size: cover
 }
+.list-works strong {
+	color: #ff711f;
+}
 
 .title-time {
 	margin-top: 30px;
@@ -2396,6 +2399,10 @@ h4 {
 	flex-basis: calc(50% - 25px)
 }
 
+.work-item__image {
+	cursor: pointer;
+}
+
 .work-item__title {
 	margin-top: 30px;
 	font-size: 24px;
@@ -2439,9 +2446,9 @@ h4 {
 }
 
 .work-size {
-	margin-top: 30px;
+	margin-top: 10px;
 	display: inline-block;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 1
 }
 
@@ -2450,13 +2457,21 @@ h4 {
 }
 
 .work-price {
-	margin-top: 30px;
-	font-size: 24px
+	margin-top: 10px;
+	font-size: 20px
 }
 
 .work-border {
 	padding-bottom: 30px;
 	border-bottom: 1px solid #e5e1f5
+}
+
+
+.work-flex.work-border .work-item:nth-child(1) {
+	flex-basis: calc(40% - 25px);
+}
+.work-flex.work-border .work-item:nth-child(2) {
+	flex-basis: calc(60% - 25px);
 }
 
 .index-page {
@@ -3395,6 +3410,7 @@ h4 {
 	}
 
 	.mobile-menu {
+		z-index: 1000;
 		display: block;
 		position: fixed;
 		left: 0;
@@ -3403,7 +3419,7 @@ h4 {
 		width: 100%;
 		max-height: 100vh;
 		overflow: auto;
-		z-index: 3;
+		z-index: 3000;
 		padding-top: 80px;
 		padding-bottom: 80px;
 		opacity: 0;
@@ -3861,6 +3877,9 @@ h4 {
 }
 
 @media (max-width: 767px) {
+	body {
+		padding-top: 40px;
+	}
 	.object-done {
 		margin-bottom:0
 	}
@@ -3891,6 +3910,7 @@ h4 {
 	.work-item img {
 		margin: 0 auto
 	}
+
 
 	.work-item__title {
 		margin-top: 15px
@@ -3983,7 +4003,7 @@ h4 {
 		font-size: 20px;
 		-webkit-box-align: start;
 		-ms-flex-align: start;
-		align-items: flex-start
+		align-items: center
 	}
 
 	.work-head {
