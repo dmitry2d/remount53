@@ -12,7 +12,8 @@ add_action(
 	'wp_enqueue_scripts',
 	static fn () => wp_enqueue_script(
 		'load-more',
-		get_template_directory_uri() . '/assets/js/load-more.js', ['jquery'], in_footer: true
+		get_template_directory_uri() . '/assets/js/load-more.js', ['jquery'],
+		['in_footer' => true]
 	)
 );
 
