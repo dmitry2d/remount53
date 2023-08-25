@@ -1281,7 +1281,7 @@ footer {
 }
 
 .footer-form {
-	margin-top: 100px;
+	margin-top: 50px;
 	background-size: contain;
 	min-height: 427px;
 	padding-bottom: 288px
@@ -1703,6 +1703,16 @@ footer {
 	text-decoration: underline
 }
 
+.main-content .service__description strong {
+	color: #ff711f;
+}
+
+.main-content .work-description ol {
+
+	padding: 20px 30px;
+
+}
+
 p {
 	margin-top: 20px;
 	letter-spacing: -.3px
@@ -1797,8 +1807,8 @@ h4 {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	margin-top: 100px;
-	padding-bottom: 20px;
+	/* margin-top: 100px; */
+	/* padding-bottom: 20px; */
 }
 
 .banner .swiper-pagination{
@@ -2394,7 +2404,7 @@ h4 {
 }
 
 .work-item {
-	margin-top: 30px;
+	margin-top: 40px;
 	-ms-flex-preferred-size: calc(50% - 25px);
 	flex-basis: calc(50% - 25px)
 }
@@ -2447,8 +2457,8 @@ h4 {
 
 .work-size {
 	margin-top: 10px;
-	display: inline-block;
-	font-size: 20px;
+	/* display: inline-block; */
+	font-size: 18px;
 	line-height: 1
 }
 
@@ -3375,7 +3385,7 @@ h4 {
 	}
 
 	.footer-form {
-		margin-top: 30px
+		margin-top: 20px
 	}
 
 	.mobile-menu__items {
@@ -3896,7 +3906,7 @@ h4 {
 	}
 
 	.work-size {
-		margin-top: 16px
+		margin-top: 15px
 	}
 
 	.work-price {

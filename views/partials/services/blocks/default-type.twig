@@ -1,2 +1,4 @@
-<p>{{ block.service_block_description }}</p>
+{# <p>{{ block.service_block_description }}</p> #}
+{% if nested_block.block.service_block_image %}
 <img src="{{ Image(block.service_block_image).src }}" alt="{{ Image(block.service_block_image).alt }}" />
+{% endif %}

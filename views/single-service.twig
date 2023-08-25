@@ -6,7 +6,9 @@
 	<h1>{{ post.title }}</h1>
 
 	{# Содержание услуги (описание) #}
-	<p>{{ post.service_description }}</p>
+	<span class="service__description">
+		<p>{{ post.service_description }}</p>
+	</span>
 
 	{# Промо текст #}
 	{% if (post.service_promo_info) %}
@@ -37,7 +39,7 @@
 
 		{# Описание блока #}
 
-		<div class="work=-description">
+		<div class="work-description">
 		{{ block.service_block_description }}
 		</div>
 
