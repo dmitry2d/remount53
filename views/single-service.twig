@@ -29,11 +29,17 @@
 				<div class="work-head__number">
 					{{ loop.index }}
 				</div>
-				{{ block.service_block_title }}
 
-				{% if (block.service_block_subtitle) %}
-				<span style="color: #ff711f;">&nbsp;—&nbsp;{{ block.service_block_subtitle }}</span>
-				{% endif %}
+				<div class="work-head__header">
+					<div class="work-head__title">
+						{{ block.service_block_title }}
+					</div>
+					{% if (block.service_block_subtitle) %}
+					<div  class="work-head__subtitle">
+						&nbsp;—&nbsp;{{ block.service_block_subtitle }}
+					</div>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 

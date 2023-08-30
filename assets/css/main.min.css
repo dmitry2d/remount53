@@ -959,8 +959,8 @@ button.swiper-pagination-bullet {
 }
 
 * {
-	margin: 0;
-	padding: 0;
+	/* margin: 0; */
+	/* padding: 0; */
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box
 }
@@ -2065,7 +2065,7 @@ h4 {
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
-	align-items: center;
+	align-items: flex-start;
 	font-size: 24px;
 	line-height: 1;
 	width: 100%;
@@ -2073,6 +2073,7 @@ h4 {
 }
 
 .work-head__number {
+	padding: 10px;
 	font-weight: 600;
 	font-size: 40px;
 	line-height: 56px;
@@ -2081,6 +2082,16 @@ h4 {
 	margin-right: 10px;
 	-ms-flex-preferred-size: 30px;
 	flex-basis: 30px
+}
+.work-head__header {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px 0;
+}
+.work-head__header {
+}
+.work-head__subtitle {
+	color: #ff711f;
 }
 
 .list-works {
@@ -2906,6 +2917,11 @@ h4 {
 	background-size: 100% 1310px
 }
 
+.index-bottom .banner {
+	padding-bottom: 20px;
+}
+
+
 .index-head {
 	width: 100%;
 	height: 492px;
@@ -2976,12 +2992,12 @@ h4 {
 }
 
 .object-done {
-	height: 746px;
+	/* height: 746px; */
 	width: 100%;
 	background: url(../img/object-done.jpg) no-repeat center;
 	background-size: cover;
-	margin: 70px 0 -20px;
-	padding-top: 80px
+	margin: 70px 0 0;
+	padding: 80px 0 120px;
 }
 
 .object-done .swiper-slide {
@@ -3089,7 +3105,7 @@ h4 {
 
 .object-done__slider {
 	padding-bottom: 50px;
-	padding: 0 20px 20px;
+	padding: 20px 20px 30px;
 }
 
 .container-pagination {
@@ -3305,8 +3321,9 @@ h4 {
 	}
 
 	.btn_callback {
-		margin-left: 0;
-		margin-top: 10px;
+		/* margin-left: 0;
+		margin-top: 10px; */
+		margin: 20px auto 0;
 		width: 185px!important;
 		height: 40px!important
 	}
@@ -3497,7 +3514,7 @@ h4 {
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;
 		justify-content: center;
-		margin: 19px auto 0
+		margin: 20px auto 0;
 	}
 
 	.mobile-phone {
@@ -3623,16 +3640,18 @@ h4 {
 	}
 
 	.menu-active .icon-handyman {
-		color: #bf0246
+		color: #bf0246;
+		display: none;
 	}
 
 	.menu-active .header-fixed__mobile {
+		z-index: 10000;
 		background: 0 0;
 		border-bottom: 4px solid transparent
 	}
 
 	.menu-active .mobile-menu {
-		top: 0;
+		top: 30px;
 		pointer-events: auto;
 		opacity: 1
 	}
@@ -3963,6 +3982,12 @@ h4 {
 		z-index: 2;
 		position: relative;
 		margin-left: -12px
+	}
+	.swiper-pagination-bullet {
+		width: 10px;
+	}
+	.swiper-pagination-bullet-active {
+		width: 20px;
 	}
 
 	.slider-items {

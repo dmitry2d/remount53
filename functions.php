@@ -144,6 +144,8 @@ class AtlantTheme extends Timber\Site {
 		wp_enqueue_script(
 			'modal-form',
 			get_template_directory_uri() . '/assets/js/modal-form.js',
+			[],
+			false,
 			['in_footer' => true]
 		);
 
