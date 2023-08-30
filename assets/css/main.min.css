@@ -982,7 +982,9 @@ body {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
-	flex-direction: column
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
 }
 
 .container {
@@ -1608,6 +1610,10 @@ footer {
 	align-items: flex-start
 }
 
+.main-block + .banner {
+	margin-top: 50px;
+}
+
 .sidebar {
 	-ms-flex-preferred-size: 269px;
 	flex-basis: 269px;
@@ -1711,6 +1717,10 @@ footer {
 
 	padding: 20px 30px;
 
+}
+
+.main-content .work-description p {
+	margin-bottom: 0;
 }
 
 p {
@@ -1924,6 +1934,10 @@ h4 {
 	display: none
 }
 
+.gallery:last-child {
+	margin-bottom: 0!important;
+}
+
 .gallery-tags {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2044,6 +2058,10 @@ h4 {
 	background-size: 100% 1310px
 }
 
+.work-flex + .work-head {
+	margin-top: 10px;
+}
+
 .work-head {
 	margin-top: 45px;
 	background: #452650 url(../img/work-bg.svg) no-repeat right bottom;
@@ -2065,15 +2083,16 @@ h4 {
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
-	align-items: flex-start;
+	align-items: center;
 	font-size: 24px;
 	line-height: 1;
 	width: 100%;
-	font-weight: 500
+	font-weight: 500;
+	padding: 0;
 }
 
 .work-head__number {
-	padding: 10px;
+	padding: 0;
 	font-weight: 600;
 	font-size: 40px;
 	line-height: 56px;
@@ -2087,8 +2106,6 @@ h4 {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 10px 0;
-}
-.work-head__header {
 }
 .work-head__subtitle {
 	color: #ff711f;
@@ -2415,7 +2432,8 @@ h4 {
 }
 
 .work-item {
-	margin-top: 40px;
+	margin-top: 17px;
+	margin-bottom: 17px;
 	-ms-flex-preferred-size: calc(50% - 25px);
 	flex-basis: calc(50% - 25px)
 }
@@ -2427,12 +2445,12 @@ h4 {
 .work-item__title {
 	margin-top: 30px;
 	font-size: 24px;
-	color: #ff711f;
 	line-height: 1
 }
 
-.work-item__title span {
-	font-weight: 700
+.work-item__title strong {
+	color: #ff711f;
+	font-weight: 700;
 }
 
 .work-item__list-title {
@@ -3271,6 +3289,11 @@ h4 {
 		width: 100%
 	}
 
+	.main-block + .banner {
+		margin-top: 15px;
+	}
+	
+
 	.index-mobile__burger {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -3651,7 +3674,7 @@ h4 {
 	}
 
 	.menu-active .mobile-menu {
-		top: 30px;
+		top: 0px;
 		pointer-events: auto;
 		opacity: 1
 	}
