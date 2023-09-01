@@ -200,10 +200,11 @@ class AtlantTheme extends Timber\Site {
 
 		// Отправляем письмо
 		$headers   = [];
-		$to        = 'i@twent.ru';
+		$to        = 'atlant-vn@yandex.ru, atlantnov@gmail.com, sergey@rassmekhin.ru';
 		$subject   = 'Новая заявка на получение скидки';
 		$message   = "Имя: $name\nТелефон: $phone";
-		$sent      = wp_mail($to, $subject, $message, $headers);
+		// $sent      = wp_mail($to, $subject, $message, $headers);
+		$sent      = mail($to, $subject, $message, $headers);
 
 		// Было ли письмо успешно отправлено
 		if ($sent) {
@@ -262,10 +263,11 @@ class AtlantTheme extends Timber\Site {
 
 		// Отправляем письмо
 		$headers   = [];
-		$to        = 'i@twent.ru';
+		$to        = 'atlant-vn@yandex.ru, atlantnov@gmail.com, sergey@rassmekhin.ru';
 		$subject   = 'Новый запрос обратного звонка сайте';
 		$message   = "Имя: $name\nТелефон: $phone";
-		$sent      = wp_mail($to, $subject, $message, $headers);
+		// $sent      = wp_mail($to, $subject, $message, $headers);
+		$sent      = mail($to, $subject, $message, $headers);
 
 		// Было ли письмо успешно отправлено
 		if ($sent) {

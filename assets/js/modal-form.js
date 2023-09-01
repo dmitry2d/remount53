@@ -1,9 +1,6 @@
 
-console.log (1)
 window.addEventListener("DOMContentLoaded",() => {
 	let modal = document.getElementById('modalForm')
-
-	console.log (modal)
 
 	let modalContent = document.querySelector('.modal-content')
 	let openBtns = document.querySelectorAll('.btn_callback')
