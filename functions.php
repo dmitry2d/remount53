@@ -264,7 +264,7 @@ class AtlantTheme extends Timber\Site {
 		// Отправляем письмо
 		$headers   = [];
 		$to        = 'atlant-vn@yandex.ru, atlantnov@gmail.com, sergey@rassmekhin.ru';
-		$subject   = 'Новый запрос обратного звонка сайте';
+		$subject   = 'Новый запрос обратного звонка с сайта';
 		$message   = "Имя: $name\nТелефон: $phone";
 		// $sent      = wp_mail($to, $subject, $message, $headers);
 		$sent      = mail($to, $subject, $message, $headers);
